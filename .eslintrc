@@ -13,7 +13,7 @@
         "key-spacing": ["warn"],
         "linebreak-style": [2, "unix"],
         "max-len": ["warn", 220, {"ignoreComments": true}],
-        "newline-per-chained-call": ["warn"],
+        "newline-per-chained-call": ["off"],
         "no-bitwise": ["off"],
         "no-console": [0],
         "no-else-return": ["warn"],
