@@ -41,7 +41,10 @@
 		"karma-firefox-launcher": "latest",
 		"karma-jasmine": "latest",
 		"karma-jasmine-ajax": "latest",
-		"uglifyify": "latest"
+		"uglifyify": "latest",
+        "@typescript-eslint/parser": "5.29.0",
+        "@typescript-eslint/eslint-plugin": "5.29.0",
+        "eslint": "8.18.0"
 	},
 
 	"scripts": 
