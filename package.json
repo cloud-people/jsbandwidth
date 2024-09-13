@@ -3,55 +3,24 @@
 	"license": "MIT",
 	"version": "5.27.0",
 	"description": "JsBandwidth - the JavaScript net speed test",
-	"author": 
-	{
+	"author": {
 		"name": "Adrian Ber",
 		"email": "beradrian@yahoo.com"
 	},
-
-	"repository": 
-	{
+	"repository": {
 		"type": "git",
 		"url": "https://github.com/beradrian/jsbandwidth.git"
 	},
-
 	"main": "index.js",
-	"dependencies": 
-	{
+	"dependencies": {
 		"extend": "latest",
-                "xhrpromise": "latest",
-                "babel-cli": "latest",
-                "babel-plugin-add-module-exports": "latest",
-                "babel-preset-es2015": "latest"
+		"xhrpromise": "latest"
 	},
-
-	"devDependencies": 
-	{
-		"angular": ">=1.4.7",
-		"angular-mocks": "1.4.7",
-		"jasmine": "latest",
-		"jasmine-ajax": "latest",
-		"jasmine-core": "latest",
-		"js-quantities": "latest",
-		"karma": "latest",
-		"karma-babel-preprocessor": "latest",
-		"karma-browserify": "latest",
-		"karma-chrome-launcher": "latest",
-		"karma-commonjs": "latest",
-		"karma-firefox-launcher": "latest",
-		"karma-jasmine": "latest",
-		"karma-jasmine-ajax": "latest",
-		"uglifyify": "latest",
-        "@typescript-eslint/parser": "5.29.0",
-        "@typescript-eslint/eslint-plugin": "5.29.0",
-        "eslint": "8.18.0"
+	"devDependencies": {
+		"typescript": "^4.9.5"
 	},
-
-	"scripts": 
-	{
-		"browserify": "node_modules/.bin/browserify src/main/js/jsbandwidth.js -o jsbandwidth.js  -t [ babelify --presets [ es2015 ] --plugins [ babel-plugin-add-module-exports ] uglifyify]",
-		"babel": "node_modules/.bin/babel src/main/js/jsbandwidth.js -o index.js --presets es2015 --plugins babel-plugin-add-module-exports",
-		"postinstall": "npm run babel",
-		"test": "node_modules/.bin/karma start src/test/karma.conf.js"
+	"scripts": {
+		"build": "npm run tsc",
+		"tsc": "tsc"
 	}
 }
