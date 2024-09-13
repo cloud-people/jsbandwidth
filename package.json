@@ -1,7 +1,7 @@
 {
 	"name": "@heropa/jsbandwidth",
 	"license": "MIT",
-	"version": "5.27.0",
+	"version": "7.40.0",
 	"description": "JsBandwidth - the JavaScript net speed test",
 	"author": {
 		"name": "Adrian Ber",
