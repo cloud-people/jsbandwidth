@@ -15,13 +15,14 @@
         "skipLibCheck": true,
         "skipDefaultLibCheck": true,
         "lib": [
+            "DOM",
             "ES2020"
         ],
         "allowJs": true,
         "resolveJsonModule": true
     },
     "include": [
-        "src/main/js/**/*.*"
+        "src/main/js/index.ts"
     ],
     "angularCompilerOptions": {
         "strictMetadataEmit": true
