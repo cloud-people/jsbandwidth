@@ -1,0 +1,28 @@
+def project = 'jsbandwidth'
+node('jenkins-agent') {
+    stage('Checkout the code'){
+        dir("${WORKSPACE}/${project}"){
+            git(
+                poll: true,
+                url: "git@github.com:cloud-people/${project}.git",
+                credentialsId: 'virtuallab-ssh-key',
+                branch: "${env.BRANCH_NAME}"
+            )
+        }
+        checkout([
+            $class: 'GitSCM',
+            branches: [[name: "master"]],
+            doGenerateSubmoduleConfigurations: false,
+            extensions: [[$class: 'CloneOption', depth: 1, noTags: true, reference: '', shallow: true],
+            [$class: 'RelativeTargetDirectory', relativeTargetDir: "devopstools"]],
+            submoduleCfg: [],
+            userRemoteConfigs: [[credentialsId: 'virtuallab-ssh-key', url: 'git@github.com:cloud-people/devopstools.git']]]
+        )
+    }
+    stage('Publish') {
+        container("jenkins") {
+            def functions = load "${WORKSPACE}/devopstools/Jenkins/Dependency_publisher/functions.groovy"
+            functions.publish(project)
+        }
+    }
+}
